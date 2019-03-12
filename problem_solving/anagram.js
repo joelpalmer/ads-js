@@ -1,3 +1,4 @@
+// frequency counting
 function isAnagram(first, second) {
 	if (first.length !== second.length) {
 		return false;
@@ -28,3 +29,5 @@ isAnagram("sam", "kelly"); //?
 isAnagram("michelle", "liam"); //?
 isAnagram("michelle", "liam"); //?
 isAnagram("bar", "rab"); //?
+isAnagram("lit", "rab"); //?
+
