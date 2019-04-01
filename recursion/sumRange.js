@@ -7,3 +7,4 @@ function sumRange(num) {
 }
 
 sumRange(13);//?
+
