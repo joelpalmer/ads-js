@@ -23,6 +23,6 @@ function sumZero(arr) {
 	}
 }
 
-sumZero(sortedArray); //?
+sumZero(sortedArray); //?.$
 sumZero(sortedArray2); //?
 sumZero(sortedArray3); //?

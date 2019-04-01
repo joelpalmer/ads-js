@@ -16,6 +16,6 @@ const arr1 = [1, 1, 2, 3, 3, 4, 5, 6, 6, 7].sort();
 const arr2 = [1, 1, 2, 3, 3, 4, 5, 6, 6, 7, 8, 9].sort();
 const arr3 = [1, 1, 2, 3, 3, 4, 5, 6, 6, 7, 9, 9].sort();
 
-countUniqueValues(arr1); //?
+countUniqueValues(arr1); //?.$
 countUniqueValues(arr2); //?
 countUniqueValues(arr3); //?
