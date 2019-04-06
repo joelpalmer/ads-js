@@ -1,3 +1,4 @@
+// O(n^2)
 function bubbleSort(arr) {
     let noSwaps;
     for (let i = arr.length; i > 0; i--) {
