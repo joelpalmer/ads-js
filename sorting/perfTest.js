@@ -1,9 +1,12 @@
 const bubbleSort = require('./bubble');
 const selectionSort = require('./selection');
 const insertionSort = require('./insertion');
-const nums = [2, 4, 22, 23, 1, 16, 24, 32, 3, 7, 19, 4];
+const mergeSort = require('./merge');
+const nums = Array.from({length: 40000}, () => Math.floor(Math.random() * 41));
 const nums2 = [...nums];
 const nums3 = [...nums];
+const nums4 = [...nums];
 bubbleSort(nums); //?.$
 selectionSort(nums2); //?.$
 insertionSort(nums3); //?.$
+mergeSort(nums4); //?.$
