@@ -1,3 +1,4 @@
+// O(n^2) because of min, max of sorted already
 function quickSort(arr, left = 0, right = arr.length - 1) {
     if (left < right) {
         let pivotIndex = pivot(arr, left, right);
