@@ -23,6 +23,7 @@ function merge(arr1, arr2) {
     return results;
 }
 
+// O(n log n)
 function mergeSort(arr) {
     if (arr.length <= 1) {
         return arr;
