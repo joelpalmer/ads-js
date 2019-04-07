@@ -1,6 +1,16 @@
 const assert = require('assert');
-function radixSort(arr) {
-    return arr;
+// O(nk)
+function radixSort(nums) {
+    let maxDigitCount = mostDigits(nums);
+    for (let k = 0; k < maxDigitCount; k++) {
+        let digitBuckets = Array.from({ length: 10 }, () => []);
+        for (let i = 0; i < nums.length; i++) {
+            digitBuckets[getDigit(nums[i], k)].push(nums[i]);
+        }
+        nums = [].concat(...digitBuckets);
+
+    }
+    return nums;
 }
 
 function getDigit(num, place) {
@@ -33,6 +43,9 @@ assert(digitCount(4747) === 4);
 // mostDigits()
 assert(mostDigits([1, 22, 333, 4444]) === 4);
 assert(mostDigits([1, 22, 333, 4444, 55555]) === 5);
+// radixSort()
+assert.deepEqual(radixSort([4, 1, 3, 2]), [1, 2, 3, 4]);
+assert.deepEqual(radixSort([40, 1, 3, 2]), [1, 2, 3, 40]); //?.$
 /** End Unit Tests **/
 
 module.exports = radixSort;
