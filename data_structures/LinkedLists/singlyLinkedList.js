@@ -173,11 +173,12 @@ assert.deepEqual({
 // get()
 list.push("Mike");
 list;//?
-list.get(2);//?
+list.get(1);//?
 
 
 assert.strictEqual(list.get(6), null);
 assert.deepEqual(list.get(2), { val: 'Mike', next: null });
+assert.deepEqual(list.get(1), { val: 'Dusty', next: { val: 'Mike', next: null } } );
 
 /** End Unit Tests */
 
