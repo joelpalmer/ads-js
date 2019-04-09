@@ -74,9 +74,22 @@ class SinglyLinkedList {
         this.length++;
         return this;
     }
+
+    get(idx) {
+        if (idx < 0 || idx > this.length) {
+            return null;
+        }
+        let counter = 0;
+        let current = this.head;
+        while (counter !== idx) {
+            current = current.next;
+            counter++;
+        }
+        return current;
+    }
 }
 
-/** Unit Tests */
+/** Unit Tests **/
 // bootstrap
 const list = new SinglyLinkedList();
 // push() assertions
@@ -144,14 +157,28 @@ assert(undefined === finalShift);
 
 // unshift()
 list.unshift("Dusty");
-assert.deepEqual({ length: 1, 
-    head:  { val: 'Dusty', next: null }, 
-    tail:  { val: 'Dusty', next: null } }, list);
+assert.deepEqual({
+    length: 1,
+    head: { val: 'Dusty', next: null },
+    tail: { val: 'Dusty', next: null }
+}, list);
 
 list.unshift("Buck");
-assert.deepEqual({ length: 2, 
-    head:  { val: 'Buck', next:  { val: 'Dusty', next: null } }, 
-    tail:  { val: 'Dusty', next: null } }, list);
+assert.deepEqual({
+    length: 2,
+    head: { val: 'Buck', next: { val: 'Dusty', next: null } },
+    tail: { val: 'Dusty', next: null }
+}, list);
+
+// get()
+list.push("Mike");
+list;//?
+list.get(2);//?
+
+
+assert.strictEqual(list.get(6), null);
+assert.deepEqual(list.get(2), { val: 'Mike', next: null });
+
 /** End Unit Tests */
 
 module.exports = SinglyLinkedList;

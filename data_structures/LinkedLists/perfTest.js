@@ -37,5 +37,6 @@ sll.push("Sebastian");//?.
 // But, this isn't a useful test for several obvious reasons
 arr.unshift("Dusty");//?.
 sll.unshift("Dusty");//?.
-sll;
-arr;
+
+
+// get()
