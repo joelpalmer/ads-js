@@ -3,6 +3,7 @@ const SinglyLinkedList = require('./singlyLinkedList');
 // push()
 const ssl = new SinglyLinkedList();
 const arr = new Array();
+
 arr.push("Sebastian");//?.
 ssl.push("Sebastian");//?.
 
@@ -14,3 +15,7 @@ ssl.push("William");//?.
 
 arr;
 ssl;
+
+// pop()
+arr.pop();//?.$
+ssl.pop();//?.$
