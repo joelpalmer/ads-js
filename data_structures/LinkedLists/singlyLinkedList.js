@@ -61,6 +61,19 @@ class SinglyLinkedList {
         }
         return currentHead;
     }
+
+    unshift(val) {
+        let newNode = new Node(val);
+        if (!this.head) {
+            this.head = newNode;
+            this.tail = this.head;
+        } else {
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 
 /** Unit Tests */
@@ -128,6 +141,17 @@ assert.deepEqual({ length: 0, head: null, tail: null }, list);
 
 const finalShift = list.shift();
 assert(undefined === finalShift);
+
+// unshift()
+list.unshift("Dusty");
+assert.deepEqual({ length: 1, 
+    head:  { val: 'Dusty', next: null }, 
+    tail:  { val: 'Dusty', next: null } }, list);
+
+list.unshift("Buck");
+assert.deepEqual({ length: 2, 
+    head:  { val: 'Buck', next:  { val: 'Dusty', next: null } }, 
+    tail:  { val: 'Dusty', next: null } }, list);
 /** End Unit Tests */
 
 module.exports = SinglyLinkedList;
