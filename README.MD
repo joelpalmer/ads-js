@@ -4,7 +4,7 @@ I have done a few similar repos in the past. This one is just the latest for me 
 
 In this repo I am taking a TDD approach using node's assert inline for UTs and a combination perf/integration test module for each logical grouping. 
 
-I HIGHLY recommend Quokka.js for messing with this stuff but any REPL will do. 
+I HIGHLY recommend Quokka.js for messing with this stuff but any REPL will do. You will see Quokka comments all over for coverage and performance testing.
 
 https://quokkajs.com/
 
