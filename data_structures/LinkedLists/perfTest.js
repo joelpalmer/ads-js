@@ -38,5 +38,10 @@ sll.push("Sebastian");//?.
 arr.unshift("Dusty");//?.
 sll.unshift("Dusty");//?.
 
+// get() seems a little faster than indexing
+sll.get(2);//?.$
+arr[2];//?.$
 
-// get()
+// set() faster 🤔
+sll.set(2, "Dodgers");//?.$
+arr[2] = "Dodgers"; //?.$

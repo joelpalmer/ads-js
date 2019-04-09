@@ -87,6 +87,15 @@ class SinglyLinkedList {
         }
         return current;
     }
+
+    set(idx, val) {
+        const node = this.get(idx);
+        if (node) {
+            node.val = val;
+            return true;
+        }
+        return false;
+    }
 }
 
 /** Unit Tests **/
@@ -172,13 +181,15 @@ assert.deepEqual({
 
 // get()
 list.push("Mike");
-list;//?
-list.get(1);//?
-
-
 assert.strictEqual(list.get(6), null);
 assert.deepEqual(list.get(2), { val: 'Mike', next: null });
-assert.deepEqual(list.get(1), { val: 'Dusty', next: { val: 'Mike', next: null } } );
+assert.deepEqual(list.get(1), { val: 'Dusty', next: { val: 'Mike', next: null } });
+
+// set()
+list.set(2, "Dodgers");
+list.set(1, "Rockies");
+assert.deepEqual(list.get(2), { val: 'Dodgers', next: null });
+assert.deepEqual(list.get(1), { val: 'Rockies', next: { val: 'Dodgers', next: null } });
 
 /** End Unit Tests */
 
