@@ -19,3 +19,12 @@ ssl;
 // pop()
 arr.pop();//?.$
 ssl.pop();//?.$
+
+// shift()
+// bootstrap (put this popped item back for the tests)
+arr.push("William");//?.
+ssl.push("William");//?.
+arr;
+ssl;
+arr.shift();//?.$
+ssl.shift();//?.$

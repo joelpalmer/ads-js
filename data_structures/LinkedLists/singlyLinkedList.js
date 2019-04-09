@@ -47,6 +47,20 @@ class SinglyLinkedList {
         }
         return current;
     }
+
+    shift() {
+        if (!this.head) {
+            return undefined;
+        }
+
+        let currentHead = this.head;
+        this.head = currentHead.next;
+        this.length--;
+        if (this.length === 0) {
+            this.tail = null;
+        }
+        return currentHead;
+    }
 }
 
 /** Unit Tests */
@@ -89,7 +103,31 @@ assert.deepEqual({ length: 0, head: null, tail: null }, list);
 const finalPop = list.pop();
 assert(undefined === finalPop);
 
-/** End Unit Tests */
+//repopulate
+list.push("Liam");
+list.push("Michelle");
+list.push("Bash");
 
+//shift()
+list.shift();
+assert.deepEqual({
+    length: 2,
+    head: { val: 'Michelle', next: { val: 'Bash', next: null } },
+    tail: { val: 'Bash', next: null }
+}, list);
+
+list.shift();
+assert.deepEqual({
+    length: 1,
+    head: { val: 'Bash', next: null },
+    tail: { val: 'Bash', next: null }
+}, list);
+
+list.shift();
+assert.deepEqual({ length: 0, head: null, tail: null }, list);
+
+const finalShift = list.shift();
+assert(undefined === finalShift);
+/** End Unit Tests */
 
 module.exports = SinglyLinkedList;
