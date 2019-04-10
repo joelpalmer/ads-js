@@ -52,6 +52,7 @@ assert(list.push("Michelle").head.val === "Liam");
 assert(list.push("Joel").tail.val === "Joel");
 assert(list.push("Sam").length === 4);
 
+// pop()
 
 
 /* End Unit Tests */

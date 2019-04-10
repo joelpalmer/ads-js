@@ -61,3 +61,15 @@ sll.reverse();//?.$
 
 /* array vs. singly linked list vs. double linked list */
 const dll = new DoublyLinkedList();//?.$
+// get dll caught up in length & test first/second push performance
+dll.push("James"); //?.
+dll.push("Joel"); //?.
+dll.push("Janie"); //?.
+dll.push("Jesse"); //?.
+
+// push()
+dll.push("Jacob"); //?.
+sll.push("James"); //?.
+arr.push("James"); //?.
+
+// pop()
