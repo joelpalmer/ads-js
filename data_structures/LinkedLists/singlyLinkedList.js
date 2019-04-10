@@ -108,10 +108,10 @@ class SinglyLinkedList {
             return !!this.unshift(val);
         }
         const newNode = new Node(val);
-        const prev = this.get(idx - 1);
-        const temp = prev.next;
-        prev.next = newNode;
-        newNode.next = temp;
+        const previousNode = this.get(idx - 1);
+        const previousNext = previousNode.next;
+        previousNode.next = newNode;
+        newNode.next = previousNext;
         this.length++;
         return true;
     }
@@ -220,7 +220,6 @@ assert.strictEqual(list.insert(0, "Marlins"), true);
 // assertion for insert in the middle
 list.insert(3, "Pirates");
 assert(list.get(3).val === "Pirates");
-
 /** End Unit Tests */
 
 module.exports = SinglyLinkedList;
