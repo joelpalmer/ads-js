@@ -1,5 +1,6 @@
 const SinglyLinkedList = require('./singlyLinkedList');
-// array vs. singly linked list
+const DoublyLinkedList = require('./doublyLinkedList');
+/* array vs. singly linked list */
 // push()
 const sll = new SinglyLinkedList();
 const arr = new Array();
@@ -57,3 +58,5 @@ arr.splice(3, 1);//?.$
 // reverse()
 arr.reverse();//?.$
 sll.reverse();//?.$
+
+/* array vs. singly linked list vs. double linked list */
