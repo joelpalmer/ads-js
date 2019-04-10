@@ -75,6 +75,7 @@ class SinglyLinkedList {
         return this;
     }
 
+    // O(n)
     get(idx) {
         if (idx < 0 || idx > this.length) {
             return null;
@@ -97,6 +98,7 @@ class SinglyLinkedList {
         return false;
     }
 
+    // O(1)
     insert(idx, val) {
         if (idx < 0 || idx > this.length) {
             return false;
@@ -116,6 +118,7 @@ class SinglyLinkedList {
         return true;
     }
 
+    // O(n)
     remove(idx) {
         if (idx < 0 || idx >= this.length) {
             return null;
