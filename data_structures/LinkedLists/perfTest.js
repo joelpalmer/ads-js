@@ -45,3 +45,7 @@ arr[2];//?.$
 // set() faster 🤔
 sll.set(2, "Dodgers");//?.$
 arr[2] = "Dodgers"; //?.$
+
+//insert()
+sll.insert(3, "Seager"); //?.$
+arr.splice(3, 0, "Seager");//?.$

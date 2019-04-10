@@ -96,6 +96,25 @@ class SinglyLinkedList {
         }
         return false;
     }
+
+    insert(idx, val) {
+        if (idx < 0 || idx > this.length) {
+            return false;
+        }
+        if (idx === this.length) {
+            return !!this.push(val);
+        }
+        if (idx === 0) {
+            return !!this.unshift(val);
+        }
+        const newNode = new Node(val);
+        const prev = this.get(idx - 1);
+        const temp = prev.next;
+        prev.next = newNode;
+        newNode.next = temp;
+        this.length++;
+        return true;
+    }
 }
 
 /** Unit Tests **/
@@ -188,8 +207,19 @@ assert.deepEqual(list.get(1), { val: 'Dusty', next: { val: 'Mike', next: null } 
 // set()
 list.set(2, "Dodgers");
 list.set(1, "Rockies");
+assert.strictEqual(list.set(9, "Giants"), false);
 assert.deepEqual(list.get(2), { val: 'Dodgers', next: null });
 assert.deepEqual(list.get(1), { val: 'Rockies', next: { val: 'Dodgers', next: null } });
+
+// insert()
+/* push and unshift are already covered but we will check for
+   proper return value */
+assert.strictEqual(list.insert(9, "Reds"), false);
+assert.strictEqual(list.insert(3, "DBacks"), true);
+assert.strictEqual(list.insert(0, "Marlins"), true);
+// assertion for insert in the middle
+list.insert(3, "Pirates");
+assert(list.get(3).val === "Pirates");
 
 /** End Unit Tests */
 
