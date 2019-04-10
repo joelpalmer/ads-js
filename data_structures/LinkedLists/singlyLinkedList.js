@@ -139,37 +139,37 @@ class SinglyLinkedList {
 const list = new SinglyLinkedList();
 // push() assertions
 list.push("Liam");
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 1,
     head: { val: 'Liam', next: null },
     tail: { val: 'Liam', next: null }
-}, list);
+});
 
 list.push("Michelle");
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 2,
     head: { val: 'Liam', next: { val: 'Michelle', next: null } },
     tail: { val: 'Michelle', next: null }
-}, list);
+});
 
 list.push("Bash");
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 3,
     head: { val: 'Liam', next: { val: 'Michelle', next: { val: 'Bash', next: null } } },
     tail: { val: 'Bash', next: null }
-}, list);
+});
 
 // pop() assertions
 list.pop();
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 2,
     head: { val: 'Liam', next: { val: 'Michelle', next: null } },
     tail: { val: 'Michelle', next: null }
-}, list);
+});
 
 list.pop();
 list.pop();
-assert.deepEqual({ length: 0, head: null, tail: null }, list);
+assert.deepEqual(list, { length: 0, head: null, tail: null });
 
 const finalPop = list.pop();
 assert(undefined === finalPop);
@@ -181,39 +181,39 @@ list.push("Bash");
 
 //shift()
 list.shift();
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 2,
     head: { val: 'Michelle', next: { val: 'Bash', next: null } },
     tail: { val: 'Bash', next: null }
-}, list);
+});
 
 list.shift();
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 1,
     head: { val: 'Bash', next: null },
     tail: { val: 'Bash', next: null }
-}, list);
+});
 
 list.shift();
-assert.deepEqual({ length: 0, head: null, tail: null }, list);
+assert.deepEqual(list, { length: 0, head: null, tail: null });
 
 const finalShift = list.shift();
 assert(undefined === finalShift);
 
 // unshift()
 list.unshift("Dusty");
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 1,
     head: { val: 'Dusty', next: null },
     tail: { val: 'Dusty', next: null }
-}, list);
+});
 
 list.unshift("Buck");
-assert.deepEqual({
+assert.deepEqual(list, {
     length: 2,
     head: { val: 'Buck', next: { val: 'Dusty', next: null } },
     tail: { val: 'Dusty', next: null }
-}, list);
+} );
 
 // get()
 list.push("Mike");
@@ -245,6 +245,12 @@ assert(list.get(3).val === 'Dodgers');
 assert(list.remove(0).val === 'Marlins');
 assert(list.remove(3).val === 'DBacks');
 
+// reverse()
+assert.deepEqual(list.reverse(), {
+    length: 3,
+    head: { val: 'Dodgers', next: { val: 'Rockies', next: { val: 'Buck', next: null } } },
+    tail: { val: 'Buck', next: null }
+});
 /** End Unit Tests */
 
 module.exports = SinglyLinkedList;
