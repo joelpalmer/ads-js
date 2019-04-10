@@ -132,6 +132,21 @@ class SinglyLinkedList {
         this.length--;
         return removedNode;
     }
+
+    reverse() {
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+        let next;
+        let prev = null;
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+        }
+        return this;
+    }
 }
 
 /** Unit Tests **/
@@ -213,7 +228,7 @@ assert.deepEqual(list, {
     length: 2,
     head: { val: 'Buck', next: { val: 'Dusty', next: null } },
     tail: { val: 'Dusty', next: null }
-} );
+});
 
 // get()
 list.push("Mike");
@@ -246,7 +261,7 @@ assert(list.remove(0).val === 'Marlins');
 assert(list.remove(3).val === 'DBacks');
 
 // reverse()
-assert.deepEqual(list.reverse(), {
+assert.deepEqual(list.reverse()/*?*/, {
     length: 3,
     head: { val: 'Dodgers', next: { val: 'Rockies', next: { val: 'Buck', next: null } } },
     tail: { val: 'Buck', next: null }

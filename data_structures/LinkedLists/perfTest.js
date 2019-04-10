@@ -55,3 +55,5 @@ sll.remove(3);//?.$
 arr.splice(3, 1);//?.$
 
 // reverse()
+arr.reverse();//?.$
+sll.reverse();//?.$
