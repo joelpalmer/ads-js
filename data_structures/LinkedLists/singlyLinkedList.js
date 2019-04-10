@@ -115,6 +115,23 @@ class SinglyLinkedList {
         this.length++;
         return true;
     }
+
+    remove(idx) {
+        if (idx < 0 || idx >= this.length) {
+            return null;
+        }
+        if (idx === this.length - 1) {
+            return this.pop();
+        }
+        if (idx === 0) {
+            return this.shift();
+        }
+        const previousNode = this.get(idx - 1);
+        const removedNode = previousNode.next;
+        previousNode.next = removedNode.next;
+        this.length--;
+        return removedNode;
+    }
 }
 
 /** Unit Tests **/
@@ -220,6 +237,14 @@ assert.strictEqual(list.insert(0, "Marlins"), true);
 // assertion for insert in the middle
 list.insert(3, "Pirates");
 assert(list.get(3).val === "Pirates");
+
+// remove()
+assert.strictEqual(list.remove(7), null);
+assert(list.remove(3).val === 'Pirates');
+assert(list.get(3).val === 'Dodgers');
+assert(list.remove(0).val === 'Marlins');
+assert(list.remove(3).val === 'DBacks');
+
 /** End Unit Tests */
 
 module.exports = SinglyLinkedList;

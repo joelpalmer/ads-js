@@ -46,6 +46,11 @@ arr[2];//?.$
 sll.set(2, "Dodgers");//?.$
 arr[2] = "Dodgers"; //?.$
 
-//insert()
+// insert()
 sll.insert(3, "Seager"); //?.$
 arr.splice(3, 0, "Seager");//?.$
+
+// remove()
+sll.remove(3);//?.$
+arr.splice(3, 1);//?.$
+
