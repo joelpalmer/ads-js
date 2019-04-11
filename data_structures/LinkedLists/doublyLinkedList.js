@@ -64,6 +64,20 @@ class DoublyLinkedList {
         this.length--;
         return shiftee;
     }
+
+    unshift(val) {
+        const newNode = new Node(val);
+        if (this.length === 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.head.prev = newNode;
+            newNode.next = this.head;
+            this.head = newNode;
+        }
+        this.length++;
+        return this;
+    }
 }
 
 /* Unit Tests */
@@ -108,6 +122,16 @@ list.shift();
 list.shift();
 assert.strictEqual(list.shift(), null);
 
+// unshift()
+assert.deepEqual(list.unshift("Liam"), {
+    head: { val: 'Liam', next: null, prev: null },
+    tail: { val: 'Liam', next: null, prev: null },
+    length: 1
+});
+
+assert(list.unshift("Michelle").head.val === "Michelle");
+assert(list.unshift("Joel").tail.val === "Liam");
+assert(list.unshift("Sam").length === 4);
 /* End Unit Tests */
 
 module.exports = DoublyLinkedList;

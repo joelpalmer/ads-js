@@ -81,3 +81,8 @@ arr.pop(); //?.$
 dll.shift(); //?.$
 sll.shift(); //?.$
 arr.shift(); //?.$
+
+// unshift()
+dll.unshift(); //?.
+sll.unshift(); //?.
+arr.unshift(); //?.
