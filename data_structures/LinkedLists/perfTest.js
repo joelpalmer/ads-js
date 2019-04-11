@@ -73,3 +73,6 @@ sll.push("James"); //?.
 arr.push("James"); //?.
 
 // pop()
+dll.pop(); //?.$
+sll.pop(); //?.$
+arr.pop(); //?.$

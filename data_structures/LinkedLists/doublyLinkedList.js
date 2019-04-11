@@ -30,6 +30,23 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+
+    pop() {
+        if (!this.head) {
+            return null;
+        }
+        const poppedNode = this.tail;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.tail = poppedNode.prev;
+            this.tail.next = null;
+            poppedNode.prev = null;
+        }
+        this.length--;
+        return poppedNode;
+    }
 }
 
 /* Unit Tests */
@@ -53,7 +70,12 @@ assert(list.push("Joel").tail.val === "Joel");
 assert(list.push("Sam").length === 4);
 
 // pop()
-
+assert.deepEqual(list.pop(), { val: 'Sam', next: null, prev: null });
+assert(list.length === 3);
+list.pop();
+list.pop();
+list.pop();
+assert.strictEqual(list.pop(), null);
 
 /* End Unit Tests */
 
