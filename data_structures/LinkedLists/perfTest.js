@@ -76,3 +76,8 @@ arr.push("James"); //?.
 dll.pop(); //?.$
 sll.pop(); //?.$
 arr.pop(); //?.$
+
+// shift()
+dll.shift(); //?.$
+sll.shift(); //?.$
+arr.shift(); //?.$

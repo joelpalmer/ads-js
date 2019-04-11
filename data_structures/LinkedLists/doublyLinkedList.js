@@ -47,6 +47,23 @@ class DoublyLinkedList {
         this.length--;
         return poppedNode;
     }
+
+    shift() {
+        if (!this.head) {
+            return null;
+        }
+        const oldHead = this.head;
+        if (this.length === 1) {
+            this.head = null;
+            this.tail = null;
+        } else {
+            this.head = oldHead.next;
+            this.head.prev = null;
+            oldHead.next = null;
+        }
+        this.length--;
+        return oldHead;
+    }
 }
 
 /* Unit Tests */
@@ -76,6 +93,20 @@ list.pop();
 list.pop();
 list.pop();
 assert.strictEqual(list.pop(), null);
+
+// shift()
+// setup
+list.push("Dodgers");
+list.push("Reds");
+list.push("Padres");
+list.push("Marlins");
+// shift assertions
+assert.deepEqual(list.shift(), { val: 'Dodgers', next: null, prev: null });
+assert(list.length === 3);
+list.shift();
+list.shift();
+list.shift();
+assert.strictEqual(list.shift(), null);
 
 /* End Unit Tests */
 
