@@ -78,6 +78,10 @@ class DoublyLinkedList {
         this.length++;
         return this;
     }
+
+    get(idx) {
+        //
+    }
 }
 
 /* Unit Tests */
@@ -132,6 +136,9 @@ assert.deepEqual(list.unshift("Liam"), {
 assert(list.unshift("Michelle").head.val === "Michelle");
 assert(list.unshift("Joel").tail.val === "Liam");
 assert(list.unshift("Sam").length === 4);
+
+// get()
+
 /* End Unit Tests */
 
 module.exports = DoublyLinkedList;

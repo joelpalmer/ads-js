@@ -86,3 +86,5 @@ arr.shift(); //?.$
 dll.unshift(); //?.
 sll.unshift(); //?.
 arr.unshift(); //?.
+
+// get()
