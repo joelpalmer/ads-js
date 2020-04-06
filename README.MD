@@ -2,9 +2,6 @@ JavaScript Algorithms and Data Structures
 
 I have done a few similar repos in the past. This one is just the latest for me to use and point others to. 
 
-In this repo I am taking a TDD approach using node's assert inline for UTs and a combination perf/integration test module for each logical grouping. 
+In this repo I am taking a TDD approach using node's assert inline for UTs and a combination perf/integration test module for each logical grouping. (**Moving to node-tap as of 4/6/20, starts with stacks PR**)
 
-I HIGHLY recommend Quokka.js for messing with this stuff but any REPL will do. You will see Quokka comments all over for coverage and performance testing.
-
-https://quokkajs.com/
 

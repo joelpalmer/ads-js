@@ -1,0 +1,22 @@
+{
+  "name": "ads_js",
+  "version": "1.0.0",
+  "description": "JavaScript Algorithms and Data Structures",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelpalmer/ads-js.git"
+  },
+  "author": "Joel Palmer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joelpalmer/ads-js/issues"
+  },
+  "homepage": "https://github.com/joelpalmer/ads-js#readme",
+  "devDependencies": {
+    "tap": "^14.10.7"
+  }
+}
